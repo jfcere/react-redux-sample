@@ -1,0 +1,110 @@
+body,
+html {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  &::before {
+    content: "";
+    background: url(assets/triangle-bg.png);
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0.21;
+    z-index: -1;
+  }
+}
+
+/**
+ * Utitliy Classes - text
+ **/
+
+ .thin-text {
+  font-weight: 300;
+}
+
+.normal-text {
+  font-weight: 400;
+}
+
+.bold-text {
+  font-weight: 500;
+}
+
+
+.align-left {
+  text-align: left;
+}
+
+.align-center {
+  text-align: center;
+}
+
+.align-right {
+  text-align: right;
+}
+
+/**
+ * Utitliy Classes - margin/padding
+ **/
+
+ @each $size in (0, 4, 8, 16, 24, 32) {
+  // margin
+  .m-#{$size} {
+    margin: $size + unquote('px') !important;
+  }
+  .mx-#{$size} {
+    margin-left: $size + unquote('px') !important;
+    margin-right: $size + unquote('px') !important;
+  }
+  .ml-#{$size} {
+    margin-left: $size + unquote('px') !important;
+  }
+  .mr-#{$size} {
+    margin-right: $size + unquote('px') !important;
+  }
+  .my-#{$size} {
+    margin-top: $size + unquote('px') !important;
+    margin-bottom: $size + unquote('px') !important;
+  }
+  .mt-#{$size} {
+    margin-top: $size + unquote('px') !important;
+  }
+  .mb-#{$size} {
+    margin-bottom: $size + unquote('px') !important;
+  }
+  // padding
+  .p-#{$size} {
+    padding: $size + unquote('px') !important;
+  }
+  .px-#{$size} {
+    padding-left: $size + unquote('px') !important;
+    padding-right: $size + unquote('px') !important;
+  }
+  .pl-#{$size} {
+    padding-left: $size + unquote('px') !important;
+  }
+  .pr-#{$size} {
+    padding-right: $size + unquote('px') !important;
+  }
+  .py-#{$size} {
+    padding-top: $size + unquote('px') !important;
+    padding-bottom: $size + unquote('px') !important;
+  }
+  .pt-#{$size} {
+    padding-top: $size + unquote('px') !important;
+  }
+  .pb-#{$size} {
+    padding-bottom: $size + unquote('px') !important;
+  }
+}

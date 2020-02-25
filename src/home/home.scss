@@ -1,0 +1,16 @@
+.home {
+  margin-top: 10vh;
+
+  &-heart-icon {
+    color: red;
+  }
+
+  &-image {
+    border-radius: 50%;
+    box-shadow: 6px -12px 0 12px rgba(0, 0, 0, 0.04) inset;
+    height: 196px;
+    width: 196px;
+    margin-bottom: 16px;
+    padding: 16px;
+  }
+}

@@ -1,0 +1,14 @@
+{
+  // recommended extensions
+  "recommendations": [
+    "bierner.markdown-emoji",
+    "coenraads.bracket-pair-colorizer",
+    "formulahendry.auto-close-tag",
+    "formulahendry.auto-rename-tag",
+    "mikerhyssmith.ts-barrelr",
+    "ms-vscode.vscode-typescript-tslint-plugin",
+    "msjsdiag.debugger-for-chrome",
+    "syler.sass-indented",
+    "vscode-icons-team.vscode-icons"
+  ]
+}

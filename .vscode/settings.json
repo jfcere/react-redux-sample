@@ -1,0 +1,25 @@
+{
+  // auto-close-tag
+  "auto-close-tag.activationOnLanguage": [
+    "html"
+  ],
+
+  // editor
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true
+  },
+  "editor.tabSize": 2,
+
+  // files
+  "[markdown]": {
+    "files.trimTrailingWhitespace": false
+  },
+
+  // use typescript version from workspace
+  "typescript.tsdk": "node_modules\\typescript\\lib",
+
+  // vsicons
+  "vsicons.associations.folders": [
+    { "icon": "redux", "extensions": ["store"], "format": "svg" }
+  ]
+}
