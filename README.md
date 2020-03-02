@@ -15,6 +15,7 @@ Application will soon to be available @ [https://jfcere.github.io/react-redux-sa
 - 🔥 [Redux](https://redux.js.org/) - State Management for JS Applications  
 - ⚛️ [React Redux](https://react-redux.js.org/) - Official React bindings for Redux  
 - 🔌 [Redux Saga](https://redux-saga.js.org/) - An alternative side effect model for Redux apps  
+- ✨ [Redux-Dynamic-Module](https://redux-dynamic-modules.js.org/) - Modularize Redux to load reducers dynamically
 - 📑 [Formik](https://jaredpalmer.com/formik) - React form library  
 - 🧷 [Formik Material-UI](https://stackworx.github.io/formik-material-ui/) - Bindings for using Formik with Material-UI  
 - 🎯 [Yup](https://github.com/jquense/yup) - Schema builder for value parsing and validation  
@@ -24,7 +25,6 @@ Application will soon to be available @ [https://jfcere.github.io/react-redux-sa
 
 - Add [Material-UI](https://material-ui.com/) themes
 - Add [React Spring](https://www.react-spring.io/) animations
-- Integrate [redux-dynamic-module](https://github.com/microsoft/redux-dynamic-modules) for lazy-loading
 - Responsiveness
 - Link GitHub button to repo
 - Publish app to GitHub pages
