@@ -1,22 +1,25 @@
 import { Box, Card, Snackbar, Typography } from '@material-ui/core';
 import React, { useEffect } from 'react';
 import { connect, ConnectedProps } from 'react-redux';
+import { DynamicModuleLoader } from 'redux-dynamic-modules';
 
-import { ApplicationState } from '../configure-store';
 import Highlight from '../shared/highlight';
 import HeroEdit from './hero-edit';
 import HeroList from './hero-list';
+import { HeroAwareState, HeroModule } from './hero.module';
 import { ViewMode } from './models';
 import * as actions from './store/hero.actions';
 
-const mapStateToProps = ({ hero }: ApplicationState) => ({
-  heroes: hero.heroes,
-  powers: hero.powers,
-  selectedHero: hero.selectedHero,
-  snackbarMessage: hero.snackbarMessage,
-  snackbarOpen: hero.snackbarOpen,
-  viewMode: hero.viewMode,
-});
+const mapStateToProps = ({ hero }: HeroAwareState) => {
+  return hero && {
+    heroes: hero.heroes,
+    powers: hero.powers,
+    selectedHero: hero.selectedHero,
+    snackbarMessage: hero.snackbarMessage,
+    snackbarOpen: hero.snackbarOpen,
+    viewMode: hero.viewMode,
+  };
+};
 
 const mapDispatchToProps = {
   addHero: actions.addHero,
@@ -89,7 +92,7 @@ const Hero: React.FunctionComponent<Props> = (props) => {
   };
 
   return (
-    <React.Fragment>
+    <DynamicModuleLoader modules={[HeroModule]}>
       <Typography className="mb-24" variant="h4">
         Heroes Application
       </Typography>
@@ -133,7 +136,7 @@ const Hero: React.FunctionComponent<Props> = (props) => {
         onClose={onSnackbarClose}
         open={snackbarOpen}
       />
-    </React.Fragment>
+    </DynamicModuleLoader>
   );
 };
 

@@ -9345,10 +9345,45 @@ redent@^1.0.0:
     indent-string "^2.1.0"
     strip-indent "^1.0.1"
 
-redux-devtools-extension@^2.13.8:
+redux-devtools-extension@^2.13.7, redux-devtools-extension@^2.13.8:
   version "2.13.8"
   resolved "https://registry.yarnpkg.com/redux-devtools-extension/-/redux-devtools-extension-2.13.8.tgz#37b982688626e5e4993ff87220c9bbb7cd2d96e1"
   integrity sha512-8qlpooP2QqPtZHQZRhx3x3OP5skEV1py/zUdMY28WNAocbafxdG2tRD1MWE7sp8obGMNYuLWanhhQ7EQvT1FBg==
+
+redux-dynamic-middlewares@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/redux-dynamic-middlewares/-/redux-dynamic-middlewares-1.0.0.tgz#a4c5859a6018a1d7fab3bdd4989f51095c806d15"
+  integrity sha512-smX1eY17dH90FVtXL6JPW01on1ptP4SOlkDYON5Lka52RNcZfgWM6hvtoZKA3O+dZL2/ytbS+tHo2gdKln5iHw==
+
+redux-dynamic-modules-core@^5.2.0:
+  version "5.2.0"
+  resolved "https://registry.yarnpkg.com/redux-dynamic-modules-core/-/redux-dynamic-modules-core-5.2.0.tgz#6e31b520ae2eb39a8ea3a63daca411bb5bb26da4"
+  integrity sha512-jOEpWgEqbnZ0zJphMmTArMs74dIaU7ewcxGlaIPMu0zUkOgyb0f9y/7JZD82+/5s50KGMYULTCRmICOYtmc3uw==
+  dependencies:
+    redux-devtools-extension "^2.13.7"
+    redux-dynamic-middlewares "^1.0.0"
+
+redux-dynamic-modules-react@^5.2.0:
+  version "5.2.0"
+  resolved "https://registry.yarnpkg.com/redux-dynamic-modules-react/-/redux-dynamic-modules-react-5.2.0.tgz#2fc8340656a2b4fbd7ced5efc5e986bff6228666"
+  integrity sha512-Hu1SdVRMRgBIMFci5YHCzHJShTWLEYxHQNOp6K/E1x5ZCAJJqZJOmLcLAO7X25LQQ7WHOaIuxBIN7bv5giIItg==
+  dependencies:
+    redux-devtools-extension "^2.13.7"
+    redux-dynamic-middlewares "^1.0.0"
+    redux-dynamic-modules-core "^5.2.0"
+
+redux-dynamic-modules-saga@^5.2.0:
+  version "5.2.0"
+  resolved "https://registry.yarnpkg.com/redux-dynamic-modules-saga/-/redux-dynamic-modules-saga-5.2.0.tgz#1f488706ce424de413ebb85628c1c05c7e50791f"
+  integrity sha512-37wwlGI/29ncS050G+dp/JklZXB7EzQZkwv6vBB/B75CM4i6Peet4PuOf3GpFLQLXydw5N5wLN0meTtCC0q9UQ==
+
+redux-dynamic-modules@^5.2.0:
+  version "5.2.0"
+  resolved "https://registry.yarnpkg.com/redux-dynamic-modules/-/redux-dynamic-modules-5.2.0.tgz#379f51aeba12d2687de2d922de8ca9f2a6c326a6"
+  integrity sha512-wAKdYWV272eIYp4Ck4OUig34L8RXasVEbpEBQa2Mmab5cLNZIsvNmNoSE5Q0YVdF3tSTgPr5/hClcRBxVrx9bQ==
+  dependencies:
+    redux-dynamic-modules-core "^5.2.0"
+    redux-dynamic-modules-react "^5.2.0"
 
 redux-persist@^6.0.0:
   version "6.0.0"
