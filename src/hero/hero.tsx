@@ -120,7 +120,7 @@ const Hero: React.FunctionComponent<Props> = (props) => {
           </p>
           <p>
             Backend server is mocked using <Highlight>redux-persist</Highlight> addon to persist state changes in LocalStorage
-            in combinaison with <Highlight>angular-in-memory-web-api</Highlight> library to initially load stored data and mock HTTP
+            in combinaison with <Highlight>miragejs</Highlight> library to initially load stored data and mock HTTP
             requests.
           </p>
           <p>

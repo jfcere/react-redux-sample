@@ -36,7 +36,7 @@ function* updateHero(action: ReturnType<typeof actions.updateHero>) {
   yield put(actions.showSnackbar(`${ action.payload.name } has been updated successfully`));
 }
 
-function* watchLoadRequests() {
+function* watchRequests() {
   yield takeLatest(types.HeroActionTypes.ADD_HERO, addHero);
   yield takeLatest(types.HeroActionTypes.LOAD_HEROES, loadHeroes);
   yield takeLatest(types.HeroActionTypes.LOAD_POWERS, loadPowers);
@@ -45,7 +45,7 @@ function* watchLoadRequests() {
 }
 
 function* heroSaga() {
-  yield all([fork(watchLoadRequests)]);
+  yield all([fork(watchRequests)]);
 }
 
 function genId(heroes: Hero[]): number {

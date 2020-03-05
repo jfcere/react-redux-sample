@@ -45,7 +45,7 @@ export const Home: React.FunctionComponent = () => {
         >
           Take the Tour
         </Button>
-        <Button color="primary" variant="outlined">
+        <Button color="secondary" variant="outlined">
           I'm Not Interested!
         </Button>
       </Box>
