@@ -8,8 +8,6 @@ Application will soon to be available @ [https://jfcere.github.io/react-redux-sa
 
 ## References
 
-### Official Documentation
-
 - ⚡ [Create React App](https://create-react-app.dev/) - React Application Startup Tool  
 - 🎨 [Material-UI](https://material-ui.com/) - Material Design implementation for React  
 - 🚢 [React Router](https://reacttraining.com/react-router/) - Declarative routing for React
