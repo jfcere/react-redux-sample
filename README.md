@@ -27,7 +27,6 @@ Application will soon to be available @ [https://jfcere.github.io/react-redux-sa
 - Add [Mirage JS](https://miragejs.com/) to mock HTTP requests
 - Add [React Spring](https://www.react-spring.io/) animations
 - Responsiveness
-- Link GitHub button to repo
 - Publish app to GitHub pages
 
 ## Clone
