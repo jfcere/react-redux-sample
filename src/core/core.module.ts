@@ -7,11 +7,9 @@ export interface CoreAwareState {
   core: CoreState;
 }
 
-export const CoreModule: ISagaModule<CoreState> = {
+export const CoreModule: ISagaModule<CoreAwareState> = {
   id: 'core',
-  reducerMap: {
-    core: coreReducer,
-  } as any,
+  reducerMap: { core: coreReducer },
   sagas: [coreSaga],
   initialActions: [],
   finalActions: [],

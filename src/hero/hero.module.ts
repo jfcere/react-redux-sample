@@ -7,11 +7,9 @@ export interface HeroAwareState {
   hero: HeroState;
 }
 
-export const HeroModule: ISagaModule<HeroState> = {
+export const HeroModule: ISagaModule<HeroAwareState> = {
   id: 'hero',
-  reducerMap: {
-    hero: heroReducer,
-  } as any,
+  reducerMap: { hero: heroReducer },
   sagas: [heroSaga],
   initialActions: [],
   finalActions: [],
