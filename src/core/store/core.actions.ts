@@ -1,23 +1,23 @@
 import { Theme } from '@material-ui/core';
 
-import { CoreActionTypes } from './core.types';
+import * as CoreTypes from './core.types';
 
-export const loadTheme = () => {
+export const loadTheme = (): CoreTypes.LoadTheme => {
   return {
-    type: CoreActionTypes.LOAD_THEME,
+    type: CoreTypes.CoreActionTypes.LOAD_THEME,
   };
 };
 
-export const loadThemeSuccess = (theme: Theme) => {
+export const loadThemeSuccess = (theme: Theme): CoreTypes.LoadThemeSuccess => {
   return {
-    type: CoreActionTypes.LOAD_THEME_SUCCESS,
+    type: CoreTypes.CoreActionTypes.LOAD_THEME_SUCCESS,
     payload: theme,
   };
 };
 
-export const setTheme = (theme: Theme) => {
+export const setTheme = (theme: Theme): CoreTypes.SetTheme => {
   return {
-    type: CoreActionTypes.SET_THEME,
+    type: CoreTypes.CoreActionTypes.SET_THEME,
     payload: theme,
   };
 };

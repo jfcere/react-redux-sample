@@ -4,7 +4,7 @@ import { HeroApi } from '../api';
 import { HeroAwareState } from '../hero.module';
 import { Hero, ViewMode } from '../models';
 import * as actions from './hero.actions';
-import * as types from './hero.types';
+import { HeroActionTypes } from './hero.types';
 
 const heroState = (state: HeroAwareState) => state.hero;
 
@@ -37,11 +37,11 @@ function* updateHero(action: ReturnType<typeof actions.updateHero>) {
 }
 
 function* watchRequests() {
-  yield takeLatest(types.HeroActionTypes.ADD_HERO, addHero);
-  yield takeLatest(types.HeroActionTypes.LOAD_HEROES, loadHeroes);
-  yield takeLatest(types.HeroActionTypes.LOAD_POWERS, loadPowers);
-  yield takeLatest(types.HeroActionTypes.REMOVE_HERO, removeHero);
-  yield takeLatest(types.HeroActionTypes.UPDATE_HERO, updateHero);
+  yield takeLatest(HeroActionTypes.ADD_HERO, addHero);
+  yield takeLatest(HeroActionTypes.LOAD_HEROES, loadHeroes);
+  yield takeLatest(HeroActionTypes.LOAD_POWERS, loadPowers);
+  yield takeLatest(HeroActionTypes.REMOVE_HERO, removeHero);
+  yield takeLatest(HeroActionTypes.UPDATE_HERO, updateHero);
 }
 
 function* heroSaga() {
