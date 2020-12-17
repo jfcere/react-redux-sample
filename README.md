@@ -4,7 +4,7 @@ Demo repository for [react](https://reactjs.org/) using [react-redux](https://re
 
 ## Application sample
 
-Application will soon to be available @ [https://jfcere.github.io/react-redux-sample](https://jfcere.github.io/react-redux-sample/)
+Application is available @ [https://jfcere.github.io/react-redux-sample](https://jfcere.github.io/react-redux-sample/)
 
 ## References
 
@@ -27,7 +27,6 @@ Application will soon to be available @ [https://jfcere.github.io/react-redux-sa
 - Add [Mirage JS](https://miragejs.com/) to mock HTTP requests
 - Add [React Spring](https://www.react-spring.io/) animations
 - Responsiveness
-- Publish app to GitHub pages
 
 ## Clone
 
