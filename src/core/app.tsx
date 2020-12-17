@@ -2,7 +2,7 @@ import { Box, Container, CssBaseline, Icon, IconButton, ThemeProvider } from '@m
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import React, { Suspense } from 'react';
+import React, { Suspense, useEffect } from 'react';
 import { connect, ConnectedProps } from 'react-redux';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { DynamicModuleLoader } from 'redux-dynamic-modules';
@@ -18,12 +18,13 @@ const Hero = React.lazy(() => import('../hero'));
 const Home = React.lazy(() => import('../home'));
 
 const mapStateToProps = ({ core }: CoreAwareState) => {
-  return core && {
-    theme: core.theme,
+  return {
+    theme: core?.theme,
   };
 };
 
 const mapDispatchToProps = {
+  loadTheme: actions.loadTheme,
   setTheme: actions.setTheme,
 };
 
@@ -34,46 +35,53 @@ type Props = ConnectedProps<typeof connector>;
 const App: React.FunctionComponent<Props> = (props) => {
   const {
     theme,
+    loadTheme,
     setTheme,
   } = props;
 
+  useEffect(() => {
+    loadTheme();
+  }, [loadTheme]);
+
   return (
     <DynamicModuleLoader modules={[CoreModule]}>
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <AppBar position="relative">
-          <Toolbar>
-            <Box flexGrow={1} clone={true}>
-              <Typography variant="h6" noWrap={true}>
-                react-redux
-              </Typography>
-            </Box>
-            {theme === lightTheme && (
-              <IconButton color="inherit" onClick={() => setTheme(darkTheme)}>
-                <Icon>brightness_4</Icon>
+      {theme && (
+        <ThemeProvider theme={theme}>
+          <CssBaseline />
+          <AppBar position="relative">
+            <Toolbar>
+              <Box flexGrow={1} clone={true}>
+                <Typography variant="h6" noWrap={true}>
+                  react-redux
+                </Typography>
+              </Box>
+              {theme === lightTheme && (
+                <IconButton color="inherit" onClick={() => setTheme(darkTheme)}>
+                  <Icon>brightness_4</Icon>
+                </IconButton>
+              )}
+              {theme === darkTheme && (
+                <IconButton color="inherit" onClick={() => setTheme(lightTheme)}>
+                  <Icon>brightness_7</Icon>
+                </IconButton>
+              )}
+              <IconButton color="inherit" href="https://github.com/jfcere/react-redux-sample">
+                <img src={GitHub} alt="GitHub" />
               </IconButton>
-            )}
-            {theme === darkTheme && (
-              <IconButton color="inherit" onClick={() => setTheme(lightTheme)}>
-                <Icon>brightness_7</Icon>
-              </IconButton>
-            )}
-            <IconButton color="inherit" href="https://github.com/jfcere/react-redux-sample">
-              <img src={GitHub} alt="GitHub" />
-            </IconButton>
-          </Toolbar>
-        </AppBar>
-        <Container className="app-container" maxWidth="lg">
-          <BrowserRouter>
-            <Suspense fallback={<div>Loading...</div>}>
-              <Switch>
-                <Route path="/heroes" component={Hero}/>
-                <Route path="/" component={Home}/>
-              </Switch>
-            </Suspense>
-          </BrowserRouter>
-        </Container>
-      </ThemeProvider>
+            </Toolbar>
+          </AppBar>
+          <Container className="app-container" maxWidth="lg">
+            <BrowserRouter>
+              <Suspense fallback={<div>Loading...</div>}>
+                <Switch>
+                  <Route path="/heroes" component={Hero}/>
+                  <Route path="/" component={Home}/>
+                </Switch>
+              </Suspense>
+            </BrowserRouter>
+          </Container>
+        </ThemeProvider>
+      )}
     </DynamicModuleLoader>
   );
 };

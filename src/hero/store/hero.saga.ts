@@ -1,12 +1,12 @@
 import { all, call, fork, put, select, takeLatest } from 'redux-saga/effects';
 
 import { HeroApi } from '../api';
+import { HeroAwareState } from '../hero.module';
 import { Hero, ViewMode } from '../models';
 import * as actions from './hero.actions';
-import { HeroState } from './hero.reducer';
 import * as types from './hero.types';
 
-const heroState = (state: HeroState) => state;
+const heroState = (state: HeroAwareState) => state.hero;
 
 function* addHero(action: ReturnType<typeof actions.addHero>) {
   const { heroes } = yield select(heroState);

@@ -11,13 +11,13 @@ import { ViewMode } from './models';
 import * as actions from './store/hero.actions';
 
 const mapStateToProps = ({ hero }: HeroAwareState) => {
-  return hero && {
-    heroes: hero.heroes,
-    powers: hero.powers,
-    selectedHero: hero.selectedHero,
-    snackbarMessage: hero.snackbarMessage,
-    snackbarOpen: hero.snackbarOpen,
-    viewMode: hero.viewMode,
+  return {
+    heroes: hero?.heroes,
+    powers: hero?.powers,
+    selectedHero: hero?.selectedHero,
+    snackbarMessage: hero?.snackbarMessage,
+    snackbarOpen: hero?.snackbarOpen,
+    viewMode: hero?.viewMode,
   };
 };
 
