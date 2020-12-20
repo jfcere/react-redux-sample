@@ -15,6 +15,7 @@ Application is available @ [https://jfcere.github.io/react-redux-sample](https:/
 - ⚛️ [React Redux](https://react-redux.js.org/) - Official React bindings for Redux  
 - 🔌 [Redux Saga](https://redux-saga.js.org/) - An alternative side effect model for Redux apps  
 - ✨ [Redux-Dynamic-Module](https://redux-dynamic-modules.js.org/) - Modularize Redux to load reducers dynamically
+- 🤓 [Redux-Persist](https://github.com/rt2zz/redux-persist) - Persist and rehydrate a redux store
 - 📑 [Formik](https://jaredpalmer.com/formik) - React form library  
 - 🧷 [Formik Material-UI](https://stackworx.github.io/formik-material-ui/) - Bindings for using Formik with Material-UI  
 - 🎯 [Yup](https://github.com/jquense/yup) - Schema builder for value parsing and validation  
@@ -23,10 +24,10 @@ Application is available @ [https://jfcere.github.io/react-redux-sample](https:/
 
 ## ToDos
 
-- Add [Material-UI](https://material-ui.com/) themes
-- Add [Mirage JS](https://miragejs.com/) to mock HTTP requests
+- Add [Redux-Persist](https://github.com/rt2zz/redux-persist) to keep store in localstorage
 - Add [React Spring](https://www.react-spring.io/) animations
-- Responsiveness
+- Add [Mirage JS](https://miragejs.com/) to mock HTTP requests
+- Add [Material-UI](https://material-ui.com/) themes
 
 ## Clone
 
