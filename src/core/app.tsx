@@ -1,4 +1,4 @@
-import { Box, Container, CssBaseline, Icon, IconButton, ThemeProvider } from '@material-ui/core';
+import { Box, Container, CssBaseline, Icon, IconButton, ThemeProvider, useMediaQuery } from '@material-ui/core';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
@@ -39,6 +39,8 @@ const App: React.FunctionComponent<Props> = (props) => {
     setTheme,
   } = props;
 
+  const smAndDown = useMediaQuery(theme?.breakpoints.down('sm') ?? '');
+
   useEffect(() => {
     loadTheme();
   }, [loadTheme]);
@@ -70,7 +72,7 @@ const App: React.FunctionComponent<Props> = (props) => {
               </IconButton>
             </Toolbar>
           </AppBar>
-          <Container className="app-container" maxWidth="lg">
+          <Container className="app-container" maxWidth="lg" disableGutters={smAndDown}>
             <BrowserRouter>
               <Suspense fallback={<div>Loading...</div>}>
                 <Switch>

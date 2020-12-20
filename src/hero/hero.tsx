@@ -1,4 +1,4 @@
-import { Box, Card, Snackbar, Typography } from '@material-ui/core';
+import { Box, Card, Hidden, Snackbar, Typography } from '@material-ui/core';
 import React, { useEffect } from 'react';
 import { connect, ConnectedProps } from 'react-redux';
 import { DynamicModuleLoader } from 'redux-dynamic-modules';
@@ -93,41 +93,45 @@ const Hero: React.FunctionComponent<Props> = (props) => {
 
   return (
     <DynamicModuleLoader modules={[HeroModule]}>
-      <Typography className="mb-24" variant="h4">
-        Heroes Application
-      </Typography>
+      <Hidden smDown={true}>
+        <Typography className="mb-24" variant="h4">
+          Heroes Application
+        </Typography>
+      </Hidden>
       <Box display="flex">
         <Box flex="1 1 100%" flexGrow={1} clone={true}>
           <Card className="px-16">
             {cardView()}
           </Card>
         </Box>
-        <Box className="section" ml={'5%'}>
-          <Typography variant="h5">
-            A Simple Example...
-          </Typography>
-          <p>
-            This is a classic <Highlight>heroes</Highlight> CRUD example where you can add, edit or remove your favorite heroes.
-          </p>
-          <p>
-            State management is implemented using the beloved <Highlight>react-redux</Highlight>, the official React bindings for
-            <Highlight>redux</Highlight> library, combined with <Highlight>redux-saga</Highlight> middleware that adds side effect
-            capabilities on dispatched actions to execute asynchronous operations and interact with the store.
-          </p>
-          <p>
-            The form implementation is made with <Highlight>formik</Highlight> and <Highlight>formik-material-ui</Highlight> bindings
-            adapted for <Highlight>material-ui</Highlight> design library.
-          </p>
-          <p>
-            Backend server is mocked using <Highlight>redux-persist</Highlight> addon to persist state changes in LocalStorage
-            in combinaison with <Highlight>miragejs</Highlight> library to initially load stored data and mock HTTP
-            requests.
-          </p>
-          <p>
-            Transitions are made with <Highlight>react-spring</Highlight> library that makes it easy to write powerfull and interactive
-            animation sequences in a jiffy.
-          </p>
-        </Box>
+        <Hidden smDown={true}>
+          <Box className="section" flex="1 1 100%" flexGrow={1} ml={'5%'}>
+            <Typography variant="h5">
+              A Simple Example...
+            </Typography>
+            <p>
+              This is a classic <Highlight>heroes</Highlight> CRUD example where you can add, edit or remove your favorite heroes.
+            </p>
+            <p>
+              State management is implemented using the beloved <Highlight>react-redux</Highlight>, the official React bindings for
+              <Highlight>redux</Highlight> library, combined with <Highlight>redux-saga</Highlight> middleware that adds side effect
+              capabilities on dispatched actions to execute asynchronous operations and interact with the store.
+            </p>
+            <p>
+              The form implementation is made with <Highlight>formik</Highlight> and <Highlight>formik-material-ui</Highlight> bindings
+              adapted for <Highlight>material-ui</Highlight> design library.
+            </p>
+            <p>
+              Backend server is mocked using <Highlight>redux-persist</Highlight> addon to persist state changes in LocalStorage
+              in combinaison with <Highlight>miragejs</Highlight> library to initially load stored data and mock HTTP
+              requests.
+            </p>
+            <p>
+              Transitions are made with <Highlight>react-spring</Highlight> library that makes it easy to write powerfull and interactive
+              animation sequences in a jiffy.
+            </p>
+          </Box>
+        </Hidden>
       </Box>
       <Snackbar
         anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}

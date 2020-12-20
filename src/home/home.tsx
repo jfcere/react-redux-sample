@@ -9,16 +9,16 @@ import './home.scss';
 export const Home: React.FunctionComponent = () => {
   return (
     <React.Fragment>
-      <Box className="home" display="flex" flexDirection="row" justifyContent="center" alignItems="center">
-        <Box mr={'5%'} bgcolor="primary.light" clone={true}>
+      <Box className="home" display="flex" flexDirection={{ xs: 'column', md: 'row' }} justifyContent="center" alignItems="center">
+        <Box mr={{ md: '5%' }} bgcolor="primary.light" clone={true}>
           <img className="home-image" src={CaptainAmerica} alt="captain-america" />
         </Box>
-        <div>
+        <Box display="flex" flexDirection="column" alignItems={{ xs: 'center', md: 'flex-start' }}>
           <Typography variant="h5">
             <span>Welcome to my&nbsp;</span>
             <span>react-redux</span>
           </Typography>
-          <Typography variant="h3">
+          <Typography align="center" variant="h3">
             Heroes Application!
           </Typography>
           <Typography variant="subtitle1">
@@ -32,7 +32,7 @@ export const Home: React.FunctionComponent = () => {
               </span>
             </Box>
           </Typography>
-        </div>
+        </Box>
       </Box>
       <Box className="mt-24" display="flex" justifyContent="center">
         <Button
