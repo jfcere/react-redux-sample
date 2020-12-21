@@ -39,7 +39,7 @@ const App: React.FunctionComponent<Props> = (props) => {
     setTheme,
   } = props;
 
-  const smAndDown = useMediaQuery(theme?.breakpoints.down('sm') ?? '');
+  const smAndDown = useMediaQuery(theme?.breakpoints.down('sm') || '');
 
   useEffect(() => {
     loadTheme();

@@ -1,36 +1,35 @@
-import { all, call, fork, put, select, takeLatest } from 'redux-saga/effects';
+import { all, call, fork, put, takeLatest } from 'redux-saga/effects';
 
 import { HeroApi } from '../api';
-import { HeroAwareState } from '../hero.module';
-import { Hero, ViewMode } from '../models';
+import { ViewMode } from '../models';
 import * as actions from './hero.actions';
 import { HeroActionTypes } from './hero.types';
 
-const heroState = (state: HeroAwareState) => state.hero;
-
 function* addHero(action: ReturnType<typeof actions.addHero>) {
-  const { heroes } = yield select(heroState);
-  yield put(actions.addHeroSuccess({ ...action.payload, id: genId(heroes) }));
+  const hero = yield call(() => HeroApi.createHero(action.payload));
+  yield put(actions.addHeroSuccess(hero));
   yield put(actions.setViewMode(ViewMode.List));
   yield put(actions.showSnackbar(`${ action.payload.name } has been added successfully`));
 }
 
 function* loadHeroes() {
-  const response = yield call(HeroApi.getHeroes);
-  yield put(actions.loadHeroesSuccess(response));
+  const heroes = yield call(HeroApi.getHeroes);
+  yield put(actions.loadHeroesSuccess(heroes));
 }
 
 function* loadPowers() {
-  const response = yield call(HeroApi.getPowers);
-  yield put(actions.loadPowersSuccess(response));
+  const powers = yield call(HeroApi.getPowers);
+  yield put(actions.loadPowersSuccess(powers));
 }
 
 function* removeHero(action: ReturnType<typeof actions.removeHero>) {
-  yield put(actions.removeHeroSuccess(action.payload));
+  const hero = yield call(() => HeroApi.deleteHero(action.payload));
+  yield put(actions.removeHeroSuccess(hero));
   yield put(actions.showSnackbar(`${ action.payload.name } has been removed successfully`));
 }
 
 function* updateHero(action: ReturnType<typeof actions.updateHero>) {
+  const hero = yield call(() => HeroApi.updateHero(action.payload));
   yield put(actions.updateHeroSuccess(action.payload));
   yield put(actions.setViewMode(ViewMode.List));
   yield put(actions.showSnackbar(`${ action.payload.name } has been updated successfully`));
@@ -46,12 +45,6 @@ function* watchRequests() {
 
 function* heroSaga() {
   yield all([fork(watchRequests)]);
-}
-
-function genId(heroes: Hero[]): number {
-  return heroes.length > 0
-    ? Math.max(...heroes.map(hero => hero.id)) + 1
-    : 1;
 }
 
 export default heroSaga;
