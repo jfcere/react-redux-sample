@@ -1,7 +1,9 @@
 import { Box, Button, Checkbox, Divider, Icon, IconButton, List, ListItem, ListItemSecondaryAction, ListItemText } from '@material-ui/core';
 import React from 'react';
 
+import SpiderMan from '../../assets/spiderman.png';
 import { Hero } from '../models';
+import './hero-list.scss';
 
 interface Props {
   heroes: Hero[];
@@ -68,6 +70,17 @@ const HeroList: React.FunctionComponent<Props> = (props) => {
           );
         })}
       </List>
+      {props.heroes && props.heroes.length === 0 && (
+        <Box className="hero-list-empty">
+          <Box bgcolor="primary.light" clone={true}>
+            <img className="hero-list-empty__image" src={SpiderMan} alt="spider-man" />
+          </Box>
+          <Box className="hero-list-empty__text" color="text.disabled">
+            <Icon className="hero-list-empty__text-quote">format_quote</Icon>
+            <span>A hero is someone who has given his or her life to something bigger than oneself...</span>
+          </Box>
+        </Box>
+      )}
     </React.Fragment>
   );
 };

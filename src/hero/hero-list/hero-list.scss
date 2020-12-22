@@ -1,0 +1,35 @@
+.hero-list {
+
+  &-empty {
+    max-width: 360px;
+    margin: 0 auto;
+    padding: 24px;
+    text-align: center;
+
+    &__image {
+      border-radius: 50%;
+      box-shadow: 6px -12px 0 12px rgba(0, 0, 0, 0.04) inset;
+      height: 164px;
+      width: 164px;
+      margin-bottom: 16px;
+      padding: 16px;
+    }
+
+    &__text {
+      position: relative;
+      margin-bottom: 16px;
+
+      &-quote {
+        $icon-size: 128px;
+
+        font-size: $icon-size;
+        height: $icon-size;
+        width: $icon-size;
+        opacity: 0.1;
+        position: absolute;
+        left: $icon-size * 0.15;
+        top: -$icon-size * 0.33;
+      }
+    }
+  }
+}

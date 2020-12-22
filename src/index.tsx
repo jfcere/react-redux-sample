@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import App from './core';
 import { configureStore } from './core/configure-store';
 import './index.scss';
-import { startServer } from './server/index';
+import { startServer } from './server';
 import * as serviceWorker from './serviceWorker';
 
 startServer();
