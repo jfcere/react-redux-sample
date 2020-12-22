@@ -4,7 +4,7 @@ declare module 'inflected' {
 
   function inflections(locale: string, fn: (inflect: Inflect) => void);
 
-  export interface Inflect {
+  interface Inflect {
     irregular: (singular: string, plural: string) => void;
   }
-};
+}

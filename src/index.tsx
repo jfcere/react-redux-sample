@@ -5,10 +5,10 @@ import { Provider } from 'react-redux';
 import App from './core';
 import { configureStore } from './core/configure-store';
 import './index.scss';
-import { makeServer } from './server/index';
+import { startServer } from './server/index';
 import * as serviceWorker from './serviceWorker';
 
-makeServer();
+startServer();
 
 const store = configureStore();
 

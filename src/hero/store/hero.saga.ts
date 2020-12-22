@@ -30,7 +30,7 @@ function* removeHero(action: ReturnType<typeof actions.removeHero>) {
 
 function* updateHero(action: ReturnType<typeof actions.updateHero>) {
   const hero = yield call(() => HeroApi.updateHero(action.payload));
-  yield put(actions.updateHeroSuccess(action.payload));
+  yield put(actions.updateHeroSuccess(hero));
   yield put(actions.setViewMode(ViewMode.List));
   yield put(actions.showSnackbar(`${ action.payload.name } has been updated successfully`));
 }
