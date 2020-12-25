@@ -30,12 +30,12 @@ export class PowerSeed extends Seed {
     { id: 22, name: 'Flying' },
   ];
 
-  public inflector = {
+  inflector = {
     singular: 'power',
     plural: 'powers',
   };
 
-  public model = {
+  model = {
     [this.collectionName]: Model.extend<Partial<Power>>({}),
   };
 

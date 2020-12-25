@@ -15,7 +15,7 @@ export function startServer() {
   });
 
   return createServer({
-    models: seeds.reduce((models, seed) =>  Object.assign(models, seed.model), {}),
+    models: seeds.reduce((models, seed) => Object.assign(models, seed.model), {}),
 
     seeds(server) {
       seeds.forEach(seed => seed.seeds(server));

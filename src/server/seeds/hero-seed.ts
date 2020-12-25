@@ -13,12 +13,12 @@ export class HeroSeed extends Seed {
     { id: 5, name: 'Robin', powerId: 4, quote: `Holy funny bone.` },
   ];
 
-  public inflector = {
+  inflector = {
     singular: 'hero',
     plural: 'heroes',
   };
 
-  public model = {
+  model = {
     [this.collectionName]: Model.extend<Partial<Hero>>({}),
   };
 
