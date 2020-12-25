@@ -51,7 +51,14 @@ export const Home: React.FunctionComponent = () => {
               <span className="mx-4">&middot;</span>
               <span>
                 <span>Follow on&nbsp;</span>
-                <Link href="https://github.com/jfcere/react-redux-sample" target="_blank" rel="noopener noreferrer">Github</Link>
+                <Link
+                  color="secondary"
+                  href="https://github.com/jfcere/react-redux-sample"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  Github
+                </Link>
               </span>
             </AnimatedTypography>
           </Box>
