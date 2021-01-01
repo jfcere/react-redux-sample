@@ -13,7 +13,7 @@ export abstract class Seed {
     return this.inflector.singular;
   }
 
-  getFromStorage<T>(): T[] | null {
+  getFromStorage<T>(): T | null {
     const json = localStorage.getItem(this.collectionName);
     return json ? JSON.parse(json) : null;
   }

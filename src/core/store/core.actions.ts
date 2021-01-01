@@ -1,5 +1,4 @@
-import { Theme } from '@material-ui/core';
-
+import { Theme } from '../models';
 import * as CoreTypes from './core.types';
 
 export const loadTheme = (): CoreTypes.LoadTheme => {
@@ -18,6 +17,13 @@ export const loadThemeSuccess = (theme: Theme): CoreTypes.LoadThemeSuccess => {
 export const setTheme = (theme: Theme): CoreTypes.SetTheme => {
   return {
     type: CoreTypes.CoreActionTypes.SET_THEME,
+    payload: theme,
+  };
+};
+
+export const setThemeSuccess = (theme: Theme): CoreTypes.SetThemeSuccess => {
+  return {
+    type: CoreTypes.CoreActionTypes.SET_THEME_SUCCESS,
     payload: theme,
   };
 };

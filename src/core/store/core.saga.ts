@@ -5,12 +5,18 @@ import * as actions from './core.actions';
 import { CoreActionTypes } from './core.types';
 
 function* loadTheme() {
-  const response = yield call(CoreApi.getTheme);
-  yield put(actions.loadThemeSuccess(response));
+  const theme = yield call(CoreApi.getTheme);
+  yield put(actions.loadThemeSuccess(theme));
+}
+
+function* setTheme(action: ReturnType<typeof actions.setTheme>) {
+  yield call(() => CoreApi.setTheme(action.payload));
+  yield put(actions.setThemeSuccess(action.payload));
 }
 
 function* watchRequests() {
   yield takeLatest(CoreActionTypes.LOAD_THEME, loadTheme);
+  yield takeLatest(CoreActionTypes.SET_THEME, setTheme);
 }
 
 function* coreSaga() {

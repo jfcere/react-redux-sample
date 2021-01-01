@@ -23,7 +23,7 @@ export class HeroSeed extends Seed {
   };
 
   seeds(server: Server): void {
-    const heroes = this.getFromStorage<Hero>() || this.initialSeed;
+    const heroes = this.getFromStorage<Hero[]>() || this.initialSeed;
     heroes.forEach(hero => server.create(this.collectionName, hero as object));
   }
 

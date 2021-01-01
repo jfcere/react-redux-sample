@@ -1,13 +1,14 @@
 import { inflections } from 'inflected';
 import { createServer } from 'miragejs';
 
-import { HeroSeed, PowerSeed, Seed } from './seeds';
+import { HeroSeed, PowerSeed, Seed, ThemeSeed } from './seeds';
 
 export function startServer() {
 
   const seeds: Seed[] = [
     new HeroSeed(),
     new PowerSeed(),
+    new ThemeSeed(),
   ];
 
   inflections('en', inflect => {

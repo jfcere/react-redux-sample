@@ -1,9 +1,10 @@
-import { Theme } from '@material-ui/core';
+import { Theme } from '../models';
 
 export enum CoreActionTypes {
   LOAD_THEME = '[Theme] Load theme',
   LOAD_THEME_SUCCESS = '[Theme] Loaded theme successfuly',
   SET_THEME = '[Theme] Set theme',
+  SET_THEME_SUCCESS = '[Theme] Set theme successfuly',
 }
 
 export interface LoadTheme {
@@ -20,7 +21,13 @@ export interface SetTheme {
   payload: Theme;
 }
 
+export interface SetThemeSuccess {
+  type: typeof CoreActionTypes.SET_THEME_SUCCESS;
+  payload: Theme;
+}
+
 export type CoreActions
   = LoadTheme
   | LoadThemeSuccess
-  | SetTheme;
+  | SetTheme
+  | SetThemeSuccess;
