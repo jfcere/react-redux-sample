@@ -1,5 +1,6 @@
 import { ISagaModule } from 'redux-dynamic-modules-saga';
 
+import { loadHeroes, loadPowers } from './store/hero.actions';
 import heroReducer, { HeroState } from './store/hero.reducer';
 import heroSaga from './store/hero.saga';
 
@@ -11,6 +12,9 @@ export const HeroModule: ISagaModule<HeroAwareState> = {
   id: 'hero',
   reducerMap: { hero: heroReducer },
   sagas: [heroSaga],
-  initialActions: [],
+  initialActions: [
+    loadHeroes(),
+    loadPowers(),
+  ],
   finalActions: [],
 };

@@ -26,7 +26,6 @@ const mapStateToProps = ({ core }: CoreAwareState) => {
 };
 
 const mapDispatchToProps = {
-  loadTheme: actions.loadTheme,
   setTheme: actions.setTheme,
 };
 
@@ -38,7 +37,6 @@ const App: React.FunctionComponent<Props> = (props) => {
   const {
     theme,
     loadingTheme,
-    loadTheme,
     setTheme,
   } = props;
 
@@ -47,10 +45,6 @@ const App: React.FunctionComponent<Props> = (props) => {
   const smAndDown = useMediaQuery(muiTheme?.breakpoints.down('sm') || '');
 
   const themesMap = availableThemes;
-
-  useEffect(() => {
-    loadTheme();
-  }, [loadTheme]);
 
   useEffect(() => {
     if (loadingTheme === false) {

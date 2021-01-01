@@ -1,5 +1,5 @@
 import { Box, Card, Hidden, Snackbar, Typography } from '@material-ui/core';
-import React, { useEffect } from 'react';
+import React from 'react';
 import { connect, ConnectedProps } from 'react-redux';
 import { DynamicModuleLoader } from 'redux-dynamic-modules';
 
@@ -23,8 +23,6 @@ const mapStateToProps = ({ hero }: HeroAwareState) => {
 
 const mapDispatchToProps = {
   addHero: actions.addHero,
-  loadHeroes: actions.loadHeroes,
-  loadPowers: actions.loadPowers,
   hideSnackbar: actions.hideSnackbar,
   removeHero: actions.removeHero,
   setViewMode: actions.setViewMode,
@@ -45,19 +43,12 @@ const Hero: React.FunctionComponent<Props> = (props) => {
     snackbarOpen,
     viewMode,
     addHero,
-    loadHeroes,
-    loadPowers,
     hideSnackbar,
     removeHero,
     selectHero,
     setViewMode,
     updateHero,
   } = props;
-
-  useEffect(() => {
-    loadHeroes();
-    loadPowers();
-  }, [loadHeroes, loadPowers]);
 
   const onSnackbarClose = (event: React.SyntheticEvent | React.MouseEvent, reason?: string) => {
     if (reason !== 'clickaway') {
