@@ -11,13 +11,10 @@ interface ThemeDto {
 
 export class ThemeSeed extends Seed {
 
-  private readonly initialSeed: ThemeDto[] = Object
-    .values(Theme)
-    .map((theme, index) => ({
-      id: index + 1,
-      theme,
-      selected: theme === Theme.Light,
-    }));
+  private readonly initialSeed: ThemeDto[] = [
+    { id: 1, theme: Theme.Light, selected: true },
+    { id: 2, theme: Theme.Dark, selected: false },
+  ];
 
   inflector = {
     singular: 'theme',
