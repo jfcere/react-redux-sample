@@ -24,9 +24,8 @@ Application is available @ [https://jfcere.github.io/react-redux-sample](https:/
 
 ## ToDos
 
-- Persist theme in localstorage
 - Add [React Spring](https://www.react-spring.io/) animations
-- Add [Material-UI](https://material-ui.com/) themes
+- Add [Material-UI](https://material-ui.com/) multiple themes
 
 ## Clone
 
