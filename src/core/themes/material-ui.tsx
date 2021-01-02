@@ -14,6 +14,19 @@ export const lightTheme = createMuiTheme({
       main: '#42a6f5',
     },
   },
+  overrides: {
+    MuiFilledInput: {
+      root: {
+        borderBottomLeftRadius: '4px',
+        borderBottomRightRadius: '4px',
+      },
+      underline: {
+        '&::before': {
+          borderColor: 'transparent',
+        },
+      },
+    },
+  },
   typography: {
     button: {
       textTransform: 'none',
@@ -35,6 +48,30 @@ export const darkTheme = createMuiTheme({
     },
     secondary: {
       main: '#26c6da',
+    },
+  },
+  overrides: {
+    MuiFilledInput: {
+      root: {
+        borderBottomLeftRadius: '4px',
+        borderBottomRightRadius: '4px',
+      },
+      underline: {
+        '&::before': {
+          borderColor: 'transparent',
+        },
+      },
+    },
+  },
+  props: {
+    MuiFilledInput: {
+      color: 'secondary',
+    },
+    MuiFormLabel: {
+      color: 'secondary',
+    },
+    MuiLink: {
+      color: 'secondary',
     },
   },
   typography: {

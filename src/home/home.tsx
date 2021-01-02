@@ -52,7 +52,6 @@ export const Home: React.FunctionComponent = () => {
               <span>
                 <span>Follow on&nbsp;</span>
                 <Link
-                  color="secondary"
                   href="https://github.com/jfcere/react-redux-sample"
                   rel="noopener noreferrer"
                   target="_blank"

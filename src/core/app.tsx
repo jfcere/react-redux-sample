@@ -57,7 +57,7 @@ const App: React.FunctionComponent<Props> = (props) => {
       {muiTheme && (
         <ThemeProvider theme={muiTheme}>
           <CssBaseline />
-          <AppBar position="relative">
+          <AppBar position="sticky">
             <Toolbar>
               <Box flexGrow={1} clone={true}>
                 <Typography variant="h6" noWrap={true}>
