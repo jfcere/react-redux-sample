@@ -80,7 +80,7 @@ const App: React.FunctionComponent<Props> = (props) => {
             </Toolbar>
           </AppBar>
           <Container className="app-container" maxWidth="lg" disableGutters={smAndDown}>
-            <BrowserRouter>
+            <BrowserRouter basename="/react-redux-sample">
               <Suspense fallback={<div>Loading...</div>}>
                 <Switch>
                   <Route path="/heroes" component={Hero}/>
