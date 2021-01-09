@@ -56,32 +56,6 @@ const Hero: React.FunctionComponent<Props> = (props) => {
     }
   };
 
-  const cardView = () => {
-    if (viewMode === ViewMode.Add) {
-      return <HeroEdit
-        onCancelClick={() => setViewMode(ViewMode.List)}
-        onSaveClick={addHero}
-        powers={powers}
-      />;
-    }
-    if (viewMode === ViewMode.Edit) {
-      return <HeroEdit
-        hero={selectedHero}
-        onCancelClick={() => setViewMode(ViewMode.List)}
-        onSaveClick={updateHero}
-        powers={powers}
-      />;
-    }
-    return <HeroList
-      heroes={heroes}
-      selectedHero={selectedHero}
-      onAddClick={() => setViewMode(ViewMode.Add)}
-      onEditClick={() => setViewMode(ViewMode.Edit)}
-      onRemoveClick={removeHero}
-      onSelectClick={selectHero}
-    />;
-  };
-
   return (
     <DynamicModuleLoader modules={[HeroModule]}>
       <Hidden smDown={true}>
@@ -92,7 +66,29 @@ const Hero: React.FunctionComponent<Props> = (props) => {
       <Box display="flex">
         <Box flex="1 1 100%" flexGrow={1} clone={true}>
           <Card className="px-16">
-            {cardView()}
+            {(viewMode === ViewMode.Add && (
+              <HeroEdit
+                onCancelClick={() => setViewMode(ViewMode.List)}
+                onSaveClick={addHero}
+                powers={powers}
+              />))
+            || (viewMode === ViewMode.Edit && (
+              <HeroEdit
+                hero={selectedHero}
+                onCancelClick={() => setViewMode(ViewMode.List)}
+                onSaveClick={updateHero}
+                powers={powers}
+              />))
+            || (viewMode === ViewMode.List && (
+              <HeroList
+                heroes={heroes}
+                selectedHero={selectedHero}
+                onAddClick={() => setViewMode(ViewMode.Add)}
+                onEditClick={() => setViewMode(ViewMode.Edit)}
+                onRemoveClick={removeHero}
+                onSelectClick={selectHero}
+              />
+            ))}
           </Card>
         </Box>
         <Hidden smDown={true}>
